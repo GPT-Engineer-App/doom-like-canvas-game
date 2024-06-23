@@ -12,7 +12,7 @@
         <canvas id="gameCanvas" width="800" height="600" class="border border-gray-700"></canvas>
     </div>
     <script type="module">
-        
+        import RaycastingEngine from './src/raycastingEngine.js';
 
         const canvas = document.getElementById('gameCanvas');
         const map = [
@@ -41,6 +41,6 @@
 
         gameLoop();
     </script>
-<script type="module" src="./src/raycastingEngine.js"></script>
+    <script type="module" src="./src/raycastingEngine.js"></script>
 </body>
 </html>
