@@ -43,6 +43,27 @@ function castRay(angle) {
     }
 }
 
+function handleKeyDown(event) {
+    switch (event.key) {
+        case 'ArrowUp':
+            player.x += Math.cos(player.angle) * player.speed;
+            player.y += Math.sin(player.angle) * player.speed;
+            break;
+        case 'ArrowDown':
+            player.x -= Math.cos(player.angle) * player.speed;
+            player.y -= Math.sin(player.angle) * player.speed;
+            break;
+        case 'ArrowLeft':
+            player.angle -= 0.1;
+            break;
+        case 'ArrowRight':
+            player.angle += 0.1;
+            break;
+    }
+}
+
+document.addEventListener('keydown', handleKeyDown);
+
 function render() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
