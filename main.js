@@ -23,25 +23,7 @@ const player = {
     speed: 2
 };
 
-function castRay(angle) {
-    let x = player.x;
-    let y = player.y;
-    const sin = Math.sin(angle);
-    const cos = Math.cos(angle);
-
-    while (true) {
-        const mapX = Math.floor(x / TILE_SIZE);
-        const mapY = Math.floor(y / TILE_SIZE);
-
-        if (map[mapY][mapX] === 1) {
-            const dist = Math.sqrt((x - player.x) ** 2 + (y - player.y) ** 2);
-            return { dist, angle };
-        }
-
-        x += cos;
-        y += sin;
-    }
-}
+document.addEventListener('keydown', handleKeyDown);
 
 function handleKeyDown(event) {
     switch (event.key) {
@@ -62,7 +44,25 @@ function handleKeyDown(event) {
     }
 }
 
-document.addEventListener('keydown', handleKeyDown);
+function castRay(angle) {
+    let x = player.x;
+    let y = player.y;
+    const sin = Math.sin(angle);
+    const cos = Math.cos(angle);
+
+    while (true) {
+        const mapX = Math.floor(x / TILE_SIZE);
+        const mapY = Math.floor(y / TILE_SIZE);
+
+        if (map[mapY][mapX] === 1) {
+            const dist = Math.sqrt((x - player.x) ** 2 + (y - player.y) ** 2);
+            return { dist, angle };
+        }
+
+        x += cos;
+        y += sin;
+    }
+}
 
 function render() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
