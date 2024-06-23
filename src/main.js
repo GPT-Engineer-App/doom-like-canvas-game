@@ -15,8 +15,8 @@ const textures = {}; // Placeholder for textures
 
 const engine = new RaycastingEngine(canvas, map, textures);
 
-let posX = 3.5;
-let posY = 3.5;
+let posX = 4.5;
+let posY = 4.5;
 let dirX = -1;
 let dirY = 0;
 
