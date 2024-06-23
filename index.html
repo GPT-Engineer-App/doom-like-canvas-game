@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Raycasting Engine Updated</title>
+    <title>Raycasting Engine</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-900 text-white">
@@ -12,7 +12,7 @@
         <canvas id="gameCanvas" width="800" height="600" class="border border-gray-700"></canvas>
     </div>
     <script type="module">
-        import RaycastingEngine from './src/raycastingEngine.js';
+        
 
         const canvas = document.getElementById('gameCanvas');
         const map = [
@@ -41,5 +41,6 @@
 
         gameLoop();
     </script>
+<script type="module" src="./src/raycastingEngine.js"></script>
 </body>
 </html>
